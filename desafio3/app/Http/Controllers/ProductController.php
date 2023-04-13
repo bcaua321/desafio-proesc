@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \App\Models\Product;
 use App\Http\Requests\ProductRequest;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {    
@@ -16,13 +17,13 @@ class ProductController extends Controller
 
     public function index()
     {
-     $produtos = \App\Models\Product::all();
+     $produtos = Product::with('category')->get();
      return view('produtos', ['produtos' => $produtos] );
     } 
 
    public function listar()
    {
-    $produtos = \App\Models\Product::all();
+    $produtos = Product::with('category')->get();
     return view('produtos', ['produtos' => $produtos] );
    }
 
@@ -31,6 +32,7 @@ class ProductController extends Controller
     $categories = \App\Models\Category::all();
     return view('produtos.create', ['categories' => $categories]);
    }
+   
    public function store(ProductRequest $request)
    {
        $product= $this->objProduct->create([

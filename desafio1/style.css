@@ -1,0 +1,58 @@
+/* General styles */
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+
+body {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+} 
+
+/* Typography  */
+
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.indent {
+    text-indent: 4rem;
+} 
+
+/* Container Styles */
+
+.container {
+    margin: 7rem 0;
+    width: 50%;
+    max-width: 1024px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5.25rem;
+}
+
+.flex-end { 
+    margin-left: auto; 
+}
+
+/* Footer Styles */
+
+.signature {
+    width: 100%;
+    border: 1px solid black;
+}
+
+.footer {    
+    text-align: center;
+    width: 40%;
+}
